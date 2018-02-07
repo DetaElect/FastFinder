@@ -1,0 +1,18 @@
+
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> {{futsal.futsal_city}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card padding>
+    <h3>Futsal name : {{futsal.futsal_name}}</h3>
+    <p>City : {{futsal.futsal_city}}</p>
+    <p>Notes : {{futsal.noteFutsal}}</p>
+    <p>Address : {{futsal.futsal_address}}</p>
+    <div #map id="map"></div>
+  </ion-card>
+</ion-content>
+

@@ -1,0 +1,81 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Futsal List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding  >
+
+  <div *ngIf="rooms">
+    <h2 text-center color="#0000">{{rooms.category.category_name}}</h2>
+
+
+    <ion-card *ngFor="let one of rooms.data">
+        <ion-card-header text-center>
+          <div item-start *ngIf="one.room_number < 4">
+            <img src="assets/img/bk.jpg">
+          </div>
+          <div item-start *ngIf="one.room_number >= 4">
+            <img src="assets/img/Gm.jpg">
+          </div>
+            <h2>Futsal: {{one.room_number}}</h2>
+          <h2>Futsal: {{one.futsal_name}}</h2>
+            <h2>Futsal: {{one.futsal_address}}</h2>
+          <h2>Deposit No. : {{one.numberDeposit}}</h2>
+          <p> <ion-icon ios="ios-usd" md="md-usd" ></ion-icon> {{one.numberDeposit}}</p>
+        </ion-card-header>
+        <ion-card-content text-center>
+
+
+          <rating [(ngModel)]="rate" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false" (ngModelChange)="onModelChange($event)">
+          </rating>
+
+          <button ion-button round color="primary" (click)="clickBook(one.room_number)">Booking</button>
+        </ion-card-content>
+      </ion-card>
+  </div>
+
+  <div *ngIf="rooms">  <ion-list *ngFor="let one of rooms.data">
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start *ngIf="one.room_number < 4">
+          <img src="assets/img/bk.jpg">
+        </ion-avatar>
+
+        <ion-avatar item-start *ngIf="one.room_number >= 4">
+          <img src="assets/img/Gm.jpg">
+        </ion-avatar>
+        <h2>{{one.futsal_name}}</h2>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="primary">
+          <ion-icon name="text"></ion-icon>
+          Text
+        </button>
+
+        <button ion-button color="primary" (click)="clickBook(one.room_number)">
+          <ion-icon name="book"></ion-icon>
+          Booging
+        </button>
+
+        <button ion-button color="secondary">
+          <ion-icon name="call"></ion-icon>
+          Deposit No. : {{one.numberDeposit}}
+        </button>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button ion-button color="primary">
+          <ion-icon name="mail"></ion-icon>
+          Address : {{one.futsal_address}}
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list> </div>
+</ion-content>

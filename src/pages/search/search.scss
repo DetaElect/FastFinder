@@ -1,0 +1,41 @@
+page-search {
+  background: linear-gradient( rgba(25, 192, 79, 0.5), rgba(255, 255, 255, 0.5))
+}
+.h5{
+  color: teal;
+  text-shadow: #607D8B;
+}
+.card-background-page {
+
+  ion-list {
+    position: relative;
+    text-align: center;
+  }
+
+  .ion-item {
+    position: absolute;
+    top: 36%;
+    font-size: 1.5em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .ion-label {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+.p{
+p: linear-gradient( rgba(181, 203, 203, 0.5), rgba(255, 255, 255, 0.5));
+}
+  background: linear-gradient( rgba(181, 203, 203, 0.5), rgba(255, 255, 255, 0.5));
+
+}
+
+.toolbar-md-primary .toolbar-background-md {
+  bacground: teal;
+}
+

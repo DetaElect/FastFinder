@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Futsal In Sudan</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="allMuseumMap()">
+        <ion-icon ios="ios-pin" md="md-pin"></ion-icon>All Futsal</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-input type="text" placeholder="Search Futsal..." (input)="searchMaps($event)"></ion-input>
+
+  <ion-list *ngIf="!isfiltered">
+    <ion-item *ngFor="let futsal of futsalList" (click)="itemTapped($event, futsal)">
+      <h2><ion-icon ios="ios-pin" md="md-pin"></ion-icon>{{futsal.futsal_name}}</h2>
+      <p>State name: {{futsal.futsal_city}}</p>
+      <p>Address: {{futsal.futsal_address}}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="isfiltered">
+    <ion-item *ngFor="let futsal of filteredFutsal" (click)="itemTapped($event, futsal)">
+      <h2><ion-icon ios="ios-pin" md="md-pin"></ion-icon>{{futsal.futsal_name}}</h2>
+      <p>State name : {{futsal.futsal_city}}</p>
+      <p>Address : {{futsal.futsal_address}}</p>
+      <p>Notes : {{futsal.noteFutsal}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

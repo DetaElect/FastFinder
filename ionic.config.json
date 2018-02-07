@@ -1,0 +1,16 @@
+{
+  "name": "FastFinder",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://project.dev/"
+
+    }
+]
+    }
+

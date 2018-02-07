@@ -1,0 +1,114 @@
+<ion-header >
+  <ion-navbar class="card-header-ios-light" color="primary2">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <div padding>
+    <ion-segment [(ngModel)]="hotel">
+      <ion-segment-button value="room">
+        <ion-icon name="md-football" ></ion-icon> &nbsp;
+        Field Category
+      </ion-segment-button>
+      <ion-segment-button value="tariff">
+        Tariff Rate
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+    <ion-card *ngFor="let one of cat" (click)="clickCat(one.id,one.price)">
+      <img src="assets/img/bk.jpg"/>
+      <div class="card-title"> {{one.category_name}}</div>
+      <div class="card-subtitle">{{one.description}}</div>
+      <br>
+      <ion-badge> <ion-icon name="alarm">show</ion-icon></ion-badge>
+    </ion-card>
+
+
+  <!--<div [ngSwitch]="hotel">-->
+    <!--<ion-list *ngSwitchCase="'room'">-->
+      <!--<div *ngIf="cat">-->
+  <!--<ion-card *ngFor="let one of cat" (click)="clickCat(one.id,one.price)">-->
+    <!--<img src="assets/img/bk.jpg"/>-->
+    <!--<ion-card-content>-->
+      <!--<ion-card-title> <ion-badge >-->
+        <!--<h1 >  {{one.category_name}}</h1> </ion-badge> &nbsp;-->
+      <!--</ion-card-title>-->
+      <!--<p>-->
+        <!---->
+      <!--</p>-->
+
+
+      <!--<ion-badge> <ion-icon name="alarm">show</ion-icon></ion-badge>-->
+
+
+
+    <!--</ion-card-content>-->
+  <!--</ion-card>-->
+      <!--</div>-->
+    <!--</ion-list>-->
+
+  <!--&lt;!&ndash;div [ngSwitch]="hotel">-->
+    <!--<ion-list *ngSwitchCase="'room'">-->
+      <!--<div *ngIf="cat">-->
+        <!--<ion-card *ngFor="let one of cat" (click)="clickCat(one.id,one.price)">-->
+          <!--<img src="assets/img/bk.jpg"/>-->
+          <!--<div class="card-title">{{one.category_name}}</div>-->
+
+          <!--<div class="card-subtitle">{{one.person}} Persons <br><br><br>{{one.description}}</div>-->
+
+        <!--</ion-card>-->
+      <!--</div>-->
+    <!--</ion-list!&ndash;&gt;-->
+
+    <!--<ion-list *ngSwitchCase="'tariff'">-->
+      <!--<div *ngIf="cat">-->
+          <!--<ion-list>-->
+              <!--<ion-item *ngFor="let one of cat" (click)="clickCat(one.id,one.price)">-->
+                <!--<ion-icon name="ios-book-outline" item-start></ion-icon>-->
+                <!--{{one.category_name}}-->
+                <!--<ion-icon name="cash" item-end>{{one.price}}</ion-icon>-->
+              <!--</ion-item>-->
+            <!--</ion-list>-->
+
+      <!--</div>-->
+    <!--</ion-list>-->
+  <!--</div>-->
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons start>
+      <button ion-button icon-only color="royal" (click)="myReserve()">
+        Activity
+        <ion-icon name="md-cart"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end (click)="mySetting()">
+      <button ion-button icon-right color="royal">
+        Settings
+        <ion-icon name="md-settings"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end (click)="Find()">
+      <button ion-button icon-right color="royal">
+        Find
+        <ion-icon ios="ios-search" md="md-search"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end (click)="MapFutsal()">
+      <button ion-button icon-right color="royal">
+        <ion-icon ios="ios-map" md="md-map"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-footer>
